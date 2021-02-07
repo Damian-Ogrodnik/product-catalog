@@ -1,11 +1,12 @@
 export const fontFamily = {
-  primary: "'Nunito', sans-serif",
+  primary: "'Nunito 600', sans-serif",
 };
 
 export const fontSizes = {
   tiny: '10px',
-  small: '14px',
-  normal: '16px',
+  small: '12px',
+  normal: '14px',
+  medium: '16px',
   big: '24px',
   huge: '32px',
 };
