@@ -1,28 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { AppRoute } from 'routing/AppRoute.enum';
+import LoginCover from 'assets/loginCover.png';
+import Logo from 'assets/logo.svg';
 
-export const Login = () => {
-  return (
-    <>
-      <Link to={AppRoute.home}>Products page</Link>
-      <h2>Login</h2>
-      <form>
-        <div>
-          <label>
-            username:
-            <input name="username" />
-          </label>
-        </div>
-        <div>
-          <label>
-            password:
-            <input name="password" type="password" />
-          </label>
-        </div>
-        <button type="submit">submit</button>
-      </form>
-    </>
-  );
-};
+import { LoginForm } from '../../components/LoginForm';
+import * as S from './styles';
+
+export const Login = () => (
+  <S.LoginWrapper>
+    <S.LoginImage src={LoginCover} />
+    <S.FormWrapper>
+      <S.Logo src={Logo} />
+      <LoginForm />
+    </S.FormWrapper>
+  </S.LoginWrapper>
+);
