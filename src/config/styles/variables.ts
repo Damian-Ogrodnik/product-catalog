@@ -1,5 +1,5 @@
 export const fontFamily = {
-  primary: "'Nunito 600', sans-serif",
+  primary: "'Nunito', sans-serif",
 };
 
 export const fontSizes = {
@@ -21,4 +21,12 @@ export const colors = {
   lightGray: '#E0E2EA',
   gray: '#B9BDCF',
   darkGray: '#9194A5',
+};
+
+export const breakpoints = {
+  small: 576,
+  medium: 768,
+  large: 992,
+  extraLarge: 1200,
+  huge: 1700,
 };
