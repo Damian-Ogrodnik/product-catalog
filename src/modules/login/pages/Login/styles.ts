@@ -22,7 +22,6 @@ export const FormWrapper = styled.div`
   width: 100%;
   margin: 7rem;
   display: flex;
-
   align-items: center;
 
   ${mediaQuery.medium} {

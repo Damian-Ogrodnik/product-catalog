@@ -21,6 +21,7 @@ export const colors = {
   lightGray: '#E0E2EA',
   gray: '#B9BDCF',
   darkGray: '#9194A5',
+  background: '#F2F2F2',
 };
 
 export const breakpoints = {
