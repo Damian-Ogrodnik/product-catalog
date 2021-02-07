@@ -15,7 +15,7 @@ export const productsEpicFactory = (productsService: ProductsService): Epic => {
     action$.pipe(
       filter(isActionOf(actions.fetchProductsAsync.request)),
       pluck('payload'),
-      switchMap(() => productsService.getProducts()),
+      switchMap(payload => productsService.getProducts(payload)),
       map(
         fold<AppError, ProductsData, actions.ProductsActions>(
           actions.fetchProductsAsync.failure,
