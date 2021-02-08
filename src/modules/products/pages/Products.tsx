@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
 import { useDispatch } from 'react-redux';
 
+import { Header } from '../components/Header';
 import { fetchProductsAsync } from '../store';
-import { AppRoute } from 'routing/AppRoute.enum';
+import * as S from './styles';
 
 export const Products = () => {
   const dispatch = useDispatch();
@@ -20,9 +21,8 @@ export const Products = () => {
     );
   }, []);
   return (
-    <>
-      <h2>Products page</h2>
-      <Link to={AppRoute.login}> Login </Link>
-    </>
+    <S.ProductsWrapper>
+      <Header />
+    </S.ProductsWrapper>
   );
 };
