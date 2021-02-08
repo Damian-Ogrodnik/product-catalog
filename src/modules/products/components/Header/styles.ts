@@ -12,7 +12,7 @@ export const Header = styled.header`
   height: 5rem;
   background-color: ${colors.white};
 
-  ${mediaQuery.large} {
+  ${mediaQuery.extraLarge} {
     padding: 0 1rem;
   }
 

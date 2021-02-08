@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import Loupe from 'assets/Loupe.svg';
 import { colors } from 'config/styles';
 import { mediaQuery } from 'common/helpers';
 
@@ -24,9 +25,12 @@ export const SearchInput = styled.input`
   border: 1px solid ${colors.lighestGray};
   box-sizing: border-box;
   border-radius: 0.75rem;
-  color: ${colors.darkGray};
+  color: ${colors.black};
   padding: 0.75rem;
-  min-width: 25rem;
+  min-width: 20rem;
+  background-image: url(${Loupe});
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
 
   ${mediaQuery.large} {
     min-width: auto;
