@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Logo from 'assets/logo.svg';
 import { AppRoute } from 'routing/AppRoute.enum';
@@ -11,8 +10,8 @@ export const Header: React.FC = () => (
   <S.Header>
     <S.Logo src={Logo} />
     <SearchForm />
-    <Link to={AppRoute.login}>
+    <S.Link to={AppRoute.login}>
       <S.LoginButton>Log in</S.LoginButton>
-    </Link>
+    </S.Link>
   </S.Header>
 );

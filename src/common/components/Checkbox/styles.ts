@@ -6,7 +6,6 @@ export const Label = styled.label`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0rem 1rem;
 `;
 
 export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`

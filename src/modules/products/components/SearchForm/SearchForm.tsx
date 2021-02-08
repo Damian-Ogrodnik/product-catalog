@@ -5,8 +5,10 @@ import * as S from './styles';
 
 export const SearchForm: React.FC = () => (
   <S.SearchForm>
-    <S.SearchInput />
-    <Checkbox label="Active" />
-    <Checkbox label="Promo" />
+    <S.SearchInput placeholder="Search" />
+    <S.CheckboxWrapper>
+      <Checkbox label="Active" />
+      <Checkbox label="Promo" />
+    </S.CheckboxWrapper>
   </S.SearchForm>
 );
