@@ -3,8 +3,8 @@ import React from 'react';
 import * as S from './styles';
 
 interface InputProps {
-  label: string;
-  placeholder: string;
+  label?: string;
+  placeholder?: string;
   type: string;
 }
 

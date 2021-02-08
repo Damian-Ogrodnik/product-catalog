@@ -5,6 +5,7 @@ import { colors } from 'config/styles';
 export const SearchForm = styled.form`
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   flex-grow: 1;
 `;
 
