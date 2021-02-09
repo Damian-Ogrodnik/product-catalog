@@ -1,28 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Header } from '../components/Header';
-import { fetchProductsAsync } from '../store';
+import { fetchProductsAsync, getSearchDetails, setSearchDetails } from '../store';
+import { FetchProductsPayload } from '../types';
 import * as S from './styles';
 
 export const Products = () => {
+  const searchDetails = useSelector(getSearchDetails);
   const dispatch = useDispatch();
 
+  const changeSearchDetails = (searchDetails: FetchProductsPayload) => {
+    dispatch(setSearchDetails(searchDetails));
+  };
+
   useEffect(() => {
-    dispatch(
-      fetchProductsAsync.request({
-        parse: 'en',
-        limit: 5,
-        pageNumber: 2,
-        activeFilter: false,
-        promoFilter: false,
-      }),
-    );
-  }, []);
+    dispatch(fetchProductsAsync.request({ ...searchDetails, page: 1 }));
+  }, [searchDetails.promo, searchDetails.active, searchDetails.search]);
+
+  useEffect(() => {
+    dispatch(fetchProductsAsync.request({ ...searchDetails, page: 1 }));
+  }, [searchDetails.page]);
+
   return (
     <S.ProductsWrapper>
-      <Header />
+      <Header searchDetails={searchDetails} changeSearchDetails={changeSearchDetails} />
     </S.ProductsWrapper>
   );
 };
