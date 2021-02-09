@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { colors } from 'config/styles';
 
 export const ProductsWrapper = styled.div`
-  height: 100vh;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
   background-color: ${colors.background};
 `;

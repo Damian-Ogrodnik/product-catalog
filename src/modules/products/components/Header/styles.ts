@@ -8,7 +8,7 @@ import { mediaQuery } from 'common/helpers';
 export const Header = styled.header`
   display: flex;
   align-items: center;
-  padding: 0 10rem;
+  padding: 3rem 10rem;
   height: 5rem;
   background-color: ${colors.white};
 
