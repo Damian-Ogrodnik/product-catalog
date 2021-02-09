@@ -3,24 +3,26 @@ import { createReducer } from 'typesafe-actions';
 import { AppAction } from 'config/rootAction';
 
 import * as actions from '../actions/productsActions';
-import { ProductsData } from '../../types';
+import { FetchProductsPayload, ProductsData } from '../../types';
 
 export interface ProductsState {
   isFetchingProducts: boolean;
   productsData?: ProductsData;
-  searchParse: string;
-  isActiveFilter: boolean;
-  isPromoFilter: boolean;
   error: string;
+  searchDetails: FetchProductsPayload;
 }
 
 export const defaultProductsState: ProductsState = {
-  isFetchingProducts: false,
   productsData: undefined,
-  searchParse: '',
-  isActiveFilter: false,
-  isPromoFilter: false,
+  isFetchingProducts: false,
   error: '',
+  searchDetails: {
+    search: '',
+    limit: 8,
+    page: 1,
+    promo: false,
+    active: false,
+  },
 };
 
 export const productsReducer = createReducer<ProductsState, AppAction>(defaultProductsState)
@@ -37,4 +39,8 @@ export const productsReducer = createReducer<ProductsState, AppAction>(defaultPr
     ...state,
     isFetchingProducts: false,
     error: payload.message,
+  }))
+  .handleAction(actions.setSearchDetails, (state, { payload }) => ({
+    ...state,
+    searchDetails: payload,
   }));

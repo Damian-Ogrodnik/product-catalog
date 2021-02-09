@@ -1,5 +1,5 @@
 import { combineEpics } from 'redux-observable';
-import { map, pluck, filter, switchMap } from 'rxjs/operators';
+import { map, pluck, filter, switchMap, debounceTime } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
 import { fold } from 'fp-ts/es6/Either';
 
@@ -13,6 +13,7 @@ import { ProductsService } from 'modules/products/services';
 export const productsEpicFactory = (productsService: ProductsService): Epic => {
   const getProducts: Epic = action$ =>
     action$.pipe(
+      debounceTime(300),
       filter(isActionOf(actions.fetchProductsAsync.request)),
       pluck('payload'),
       switchMap(payload => productsService.getProducts(payload)),
