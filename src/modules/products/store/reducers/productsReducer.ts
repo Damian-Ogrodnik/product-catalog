@@ -8,14 +8,14 @@ import { FetchProductsPayload, Product, ProductsData, ProductsMeta } from '../..
 export interface ProductsState {
   isFetchingProducts: boolean;
   items: Product[];
-  meta?: ProductsMeta;
+  productsMeta?: ProductsMeta;
   error: string;
   searchDetails: FetchProductsPayload;
 }
 
 export const defaultProductsState: ProductsState = {
   items: [],
-  meta: undefined,
+  productsMeta: undefined,
   isFetchingProducts: false,
   error: '',
   searchDetails: {
@@ -23,7 +23,7 @@ export const defaultProductsState: ProductsState = {
     limit: 8,
     page: 1,
     promo: false,
-    active: false,
+    active: true,
   },
 };
 
@@ -35,8 +35,8 @@ export const productsReducer = createReducer<ProductsState, AppAction>(defaultPr
   .handleAction(actions.fetchProductsAsync.success, (state, { payload: { items, meta } }) => ({
     ...state,
     isFetchingProducts: false,
+    productsMeta: meta,
     items,
-    meta,
   }))
   .handleAction(actions.fetchProductsAsync.failure, (state, { payload }) => ({
     ...state,
