@@ -3,17 +3,19 @@ import { createReducer } from 'typesafe-actions';
 import { AppAction } from 'config/rootAction';
 
 import * as actions from '../actions/productsActions';
-import { FetchProductsPayload, ProductsData } from '../../types';
+import { FetchProductsPayload, Product, ProductsData, ProductsMeta } from '../../types';
 
 export interface ProductsState {
   isFetchingProducts: boolean;
-  productsData?: ProductsData;
+  items: Product[];
+  meta?: ProductsMeta;
   error: string;
   searchDetails: FetchProductsPayload;
 }
 
 export const defaultProductsState: ProductsState = {
-  productsData: undefined,
+  items: [],
+  meta: undefined,
   isFetchingProducts: false,
   error: '',
   searchDetails: {
@@ -30,10 +32,11 @@ export const productsReducer = createReducer<ProductsState, AppAction>(defaultPr
     ...state,
     isFetchingProducts: true,
   }))
-  .handleAction(actions.fetchProductsAsync.success, (state, { payload }) => ({
+  .handleAction(actions.fetchProductsAsync.success, (state, { payload: { items, meta } }) => ({
     ...state,
     isFetchingProducts: false,
-    products: payload,
+    items,
+    meta,
   }))
   .handleAction(actions.fetchProductsAsync.failure, (state, { payload }) => ({
     ...state,

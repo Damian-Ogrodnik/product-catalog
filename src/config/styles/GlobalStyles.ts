@@ -5,12 +5,13 @@ import { fontFamily, fontSizes, colors } from './variables';
 
 export const GlobalStyles = createGlobalStyle`
     html, body, #root {
-        height: 100%
+        height: 100%;
     }
     body {
         margin: 0;
         font-family: ${fontFamily.primary};
         font-size: ${fontSizes.normal};
-        color: ${colors.black}
+        color: ${colors.black};
+        background-color: ${colors.background};
     }
 `;

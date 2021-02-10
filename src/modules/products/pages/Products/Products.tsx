@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
-
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Header } from '../components/Header';
-import { fetchProductsAsync, getSearchDetails, setSearchDetails } from '../store';
-import { FetchProductsPayload } from '../types';
+import { Header } from '../../components/Header';
+import { Pagination } from '../../components/Pagination';
+import { ProductsList } from '../../components/ProductsList';
+import { fetchProductsAsync, getProducts, getSearchDetails, setSearchDetails } from '../../store';
+import { FetchProductsPayload } from '../../types';
 import * as S from './styles';
 
 export const Products = () => {
   const searchDetails = useSelector(getSearchDetails);
+  const products = useSelector(getProducts);
   const dispatch = useDispatch();
 
   const changeSearchDetails = (searchDetails: FetchProductsPayload) => {
@@ -26,6 +28,8 @@ export const Products = () => {
   return (
     <S.ProductsWrapper>
       <Header searchDetails={searchDetails} changeSearchDetails={changeSearchDetails} />
+      <ProductsList products={products} />
+      <Pagination />
     </S.ProductsWrapper>
   );
 };
