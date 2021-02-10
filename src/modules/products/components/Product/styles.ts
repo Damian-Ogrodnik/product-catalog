@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { colors, fontSizes } from 'config/styles';
 import { PrimaryButton as _PrimaryButton } from 'common/components/styled';
+import { mediaQuery } from 'common/helpers';
 
 export const ProductWrapper = styled.section`
   position: relative;
@@ -22,6 +23,10 @@ export const Image = styled.img<ImageProps>`
   height: 45%;
   width: 100%;
   opacity: ${({ isActive }) => (isActive ? 1 : 0.5)};
+
+  ${mediaQuery.small} {
+    height: 55%;
+  }
 `;
 
 export const ContentWrapper = styled.div`

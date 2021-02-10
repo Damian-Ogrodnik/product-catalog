@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import FilledStar from 'assets/filled-star.svg';
 import EmptyStar from 'assets/star.svg';
 
 import { Product as ProductModel } from '../../types';
+import { ProductModal } from '../ProductModal';
 import * as S from './styles';
 
 interface ProductListProps {
@@ -11,9 +12,15 @@ interface ProductListProps {
 }
 
 export const Product: React.FC<ProductListProps> = ({
+  product,
   product: { name, description, image, rating, promo, active },
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const starsData = new Array(5).fill(false, 0, 5).fill(true, 0, rating);
+
+  const toogleModal = () => {
+    setIsModalOpen(prevState => !prevState);
+  };
 
   return (
     <S.ProductWrapper>
@@ -31,9 +38,10 @@ export const Product: React.FC<ProductListProps> = ({
             ),
           )}
         </S.StarsWrapper>
-        <S.PrimaryButton isDisabled={!active}>
+        <S.PrimaryButton onClick={() => active && toogleModal()} isDisabled={!active}>
           {active ? 'Show details' : 'Unavailable'}
         </S.PrimaryButton>
+        <ProductModal product={product} toogleModal={toogleModal} isModalOpen={isModalOpen} />
       </S.ContentWrapper>
     </S.ProductWrapper>
   );
