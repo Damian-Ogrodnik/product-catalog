@@ -7,5 +7,6 @@ export const mediaQuery = {
   medium: mediaQ(breakpoints.medium),
   large: mediaQ(breakpoints.large),
   extraLarge: mediaQ(breakpoints.extraLarge),
+  big: mediaQ(breakpoints.big),
   huge: mediaQ(breakpoints.huge),
 };

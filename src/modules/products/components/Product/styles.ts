@@ -12,7 +12,6 @@ export const ProductWrapper = styled.section`
   border-radius: 0.5rem;
   overflow: hidden;
   background-color: ${colors.white};
-  height: 100%;
 `;
 
 interface ImageProps {
@@ -20,7 +19,7 @@ interface ImageProps {
 }
 
 export const Image = styled.img<ImageProps>`
-  height: 45%;
+  height: 10rem;
   width: 100%;
   opacity: ${({ isActive }) => (isActive ? 1 : 0.5)};
 
@@ -34,7 +33,11 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   padding: 1rem;
   width: 100%;
-  height: 100%;
+  height: 12rem;
+
+  ${mediaQuery.large} {
+    height: 15rem;
+  }
 `;
 
 export const ProductName = styled.h3`

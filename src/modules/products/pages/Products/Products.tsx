@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Spinner from 'assets/spinner.svg';
@@ -28,13 +28,16 @@ export const Products = () => {
     dispatch(setSearchDetails(searchDetails));
   };
 
-  const fetchSpecificPage = (page: number) => {
-    dispatch(fetchProductsAsync.request({ ...searchDetails, page }));
-  };
+  const fetchSpecificPage = useCallback(
+    (page: number) => {
+      dispatch(fetchProductsAsync.request({ ...searchDetails, page }));
+    },
+    [dispatch, searchDetails],
+  );
 
   useEffect(() => {
     fetchSpecificPage(1);
-  }, [searchDetails.promo, searchDetails.active, searchDetails.search]);
+  }, [fetchSpecificPage]);
 
   return (
     <S.ProductsWrapper>
