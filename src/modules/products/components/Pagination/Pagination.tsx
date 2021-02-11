@@ -13,6 +13,8 @@ export const Pagination: React.FC<PaginationProps> = ({
   productsMeta: { totalItems, currentPage, itemsPerPage, totalPages },
 }) => {
   const currentPageNumber = parseInt(currentPage, 10);
+  const isFirstPage = currentPageNumber === 1;
+  const isLastPage = currentPageNumber === totalPages;
 
   const fetchWithScroll = (page: number) => {
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
@@ -21,7 +23,10 @@ export const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <S.PaginationWrapper>
-      <S.PaginationButton isDisabled={currentPageNumber === 1} onClick={() => fetchWithScroll(1)}>
+      <S.PaginationButton
+        isDisabled={currentPageNumber === 1}
+        onClick={() => !isFirstPage && fetchWithScroll(1)}
+      >
         First
       </S.PaginationButton>
       <S.Pagination
@@ -33,7 +38,7 @@ export const Pagination: React.FC<PaginationProps> = ({
       />
       <S.PaginationButton
         isDisabled={currentPageNumber === totalPages}
-        onClick={() => fetchWithScroll(totalPages)}
+        onClick={() => !isLastPage && fetchWithScroll(totalPages)}
       >
         Last
       </S.PaginationButton>
