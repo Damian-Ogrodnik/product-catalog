@@ -27,7 +27,7 @@ export const Image = styled.img`
 `;
 
 export const ProductName = styled.h3`
-  font-size: ${fontSizes.medium};
+  font-size: ${fontSizes.large};
   font-weight: 600;
   margin: 1.5rem 1rem 0.5rem;
 `;

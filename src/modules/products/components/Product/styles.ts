@@ -39,7 +39,6 @@ export const ContentWrapper = styled.div`
 
 export const ProductName = styled.h3`
   font-size: ${fontSizes.medium};
-  font-weight: 600;
   margin: 0;
 `;
 
@@ -59,7 +58,7 @@ export const ProductDescription = styled.p`
 `;
 
 export const PrimaryButton = styled(_PrimaryButton)`
-  height: 2rem;
+  height: 2.5rem;
 `;
 
 export const PromoLabel = styled.span`

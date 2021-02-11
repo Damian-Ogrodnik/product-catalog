@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Spinner from 'assets/spinner.svg';
+import * as CS from 'common/components/styled';
+
 import { Header } from '../../components/Header';
 import { ProductsList } from '../../components/ProductsList';
 import {
@@ -37,7 +40,7 @@ export const Products = () => {
     <S.ProductsWrapper>
       <Header searchDetails={searchDetails} changeSearchDetails={changeSearchDetails} />
       {isFetchingProducts ? (
-        <div>Loading</div>
+        <CS.Spinner src={Spinner} alt="Loader" />
       ) : (
         <ProductsList
           products={products}
