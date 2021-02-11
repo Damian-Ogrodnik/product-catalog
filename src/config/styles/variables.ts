@@ -7,6 +7,7 @@ export const fontSizes = {
   small: '12px',
   normal: '14px',
   medium: '16px',
+  large: '18px',
   big: '24px',
   huge: '32px',
 };

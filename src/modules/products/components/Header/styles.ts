@@ -10,6 +10,7 @@ export const Header = styled.header`
   align-items: center;
   padding: 2rem 10rem;
   height: 5rem;
+  width: 100%;
   background-color: ${colors.white};
 
   ${mediaQuery.extraLarge} {
@@ -22,7 +23,8 @@ export const Header = styled.header`
     align-items: flex-start;
     gap: 1rem;
     height: auto;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 0rem;
+    height: auto;
   }
 `;
 
