@@ -8,12 +8,12 @@ export const ProductWrapper = styled.main`
   gap: 2rem;
   padding: 3rem 10rem;
 
-  ${mediaQuery.extraLarge} {
+  ${mediaQuery.big} {
     padding: 2rem 1rem;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  ${mediaQuery.large} {
+  ${mediaQuery.medium} {
     grid-template-columns: 1fr 1fr;
   }
 

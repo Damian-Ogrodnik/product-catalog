@@ -3,7 +3,7 @@ import { createReducer } from 'typesafe-actions';
 import { AppAction } from 'config/rootAction';
 
 import * as actions from '../actions/productsActions';
-import { FetchProductsPayload, Product, ProductsData, ProductsMeta } from '../../types';
+import { FetchProductsPayload, Product, ProductsMeta } from '../../types';
 
 export interface ProductsState {
   isFetchingProducts: boolean;

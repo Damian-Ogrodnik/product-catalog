@@ -30,5 +30,6 @@ export const breakpoints = {
   medium: 768,
   large: 992,
   extraLarge: 1200,
+  big: 1400,
   huge: 1700,
 };
