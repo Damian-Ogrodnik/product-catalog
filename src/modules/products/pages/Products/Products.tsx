@@ -36,7 +36,9 @@ export const Products = () => {
   return (
     <S.ProductsWrapper>
       <Header searchDetails={searchDetails} changeSearchDetails={changeSearchDetails} />
-      {isFetchingProducts ? null : (
+      {isFetchingProducts ? (
+        <div>Loading</div>
+      ) : (
         <ProductsList
           products={products}
           productsMeta={productsMeta}

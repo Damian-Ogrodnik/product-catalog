@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Product as ProductModel, ProductsMeta } from 'modules/products/types';
-
+import { Product as ProductModel, ProductsMeta } from '../../types';
 import { Product } from '../Product';
-import * as S from './styles';
 import { Pagination } from '../Pagination';
+import { EmptyInfo } from '../EmptyInfo';
+import * as S from './styles';
 
 interface ProductsListProps {
   products: ProductModel[];
@@ -19,7 +19,7 @@ export const ProductsList: React.FC<ProductsListProps> = ({
 }) => {
   const isPaginationNeeded = products.length !== productsMeta?.totalItems;
 
-  return (
+  return products.length ? (
     <S.ProductWrapper>
       {products.map(product => (
         <Product key={product.id} product={product} />
@@ -28,5 +28,7 @@ export const ProductsList: React.FC<ProductsListProps> = ({
         <Pagination productsMeta={productsMeta} fetchSpecificPage={fetchSpecificPage} />
       )}
     </S.ProductWrapper>
+  ) : (
+    <EmptyInfo>empty</EmptyInfo>
   );
 };

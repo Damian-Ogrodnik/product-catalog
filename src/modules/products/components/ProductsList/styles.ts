@@ -6,7 +6,7 @@ export const ProductWrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2rem;
-  padding: 2rem 10rem;
+  padding: 3rem 10rem;
 
   ${mediaQuery.extraLarge} {
     padding: 2rem 1rem;
