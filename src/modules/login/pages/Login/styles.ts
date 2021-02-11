@@ -10,7 +10,7 @@ export const LoginWrapper = styled.div`
 
 export const LoginImage = styled.img`
   height: 100%;
-  min-width: 30%;
+  min-width: 35%;
   width: auto;
 
   ${mediaQuery.medium} {
