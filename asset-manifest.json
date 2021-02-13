@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.js": "/product-catalog/static/js/main.35e14d09.chunk.js",
+    "main.js.map": "/product-catalog/static/js/main.35e14d09.chunk.js.map",
+    "runtime-main.js": "/product-catalog/static/js/runtime-main.232e89be.js",
+    "runtime-main.js.map": "/product-catalog/static/js/runtime-main.232e89be.js.map",
+    "static/css/2.4af28dbb.chunk.css": "/product-catalog/static/css/2.4af28dbb.chunk.css",
+    "static/js/2.a2137963.chunk.js": "/product-catalog/static/js/2.a2137963.chunk.js",
+    "static/js/2.a2137963.chunk.js.map": "/product-catalog/static/js/2.a2137963.chunk.js.map",
+    "index.html": "/product-catalog/index.html",
+    "precache-manifest.b2c4154b2eb001cac7a34b230a1b09ac.js": "/product-catalog/precache-manifest.b2c4154b2eb001cac7a34b230a1b09ac.js",
+    "service-worker.js": "/product-catalog/service-worker.js",
+    "static/css/2.4af28dbb.chunk.css.map": "/product-catalog/static/css/2.4af28dbb.chunk.css.map",
+    "static/js/2.a2137963.chunk.js.LICENSE.txt": "/product-catalog/static/js/2.a2137963.chunk.js.LICENSE.txt",
+    "static/media/Check.svg": "/product-catalog/static/media/Check.7335ef80.svg",
+    "static/media/Loupe.svg": "/product-catalog/static/media/Loupe.1f9315f4.svg",
+    "static/media/empty-icon.svg": "/product-catalog/static/media/empty-icon.ed5a35d5.svg",
+    "static/media/filled-star.svg": "/product-catalog/static/media/filled-star.78a96900.svg",
+    "static/media/loginCover.png": "/product-catalog/static/media/loginCover.fcf9f4a0.png",
+    "static/media/logo.svg": "/product-catalog/static/media/logo.44c89fc4.svg",
+    "static/media/spinner.svg": "/product-catalog/static/media/spinner.8c25c2b4.svg",
+    "static/media/star.svg": "/product-catalog/static/media/star.2f01c390.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.232e89be.js",
+    "static/css/2.4af28dbb.chunk.css",
+    "static/js/2.a2137963.chunk.js",
+    "static/js/main.35e14d09.chunk.js"
+  ]
+}
