@@ -50,7 +50,7 @@ export class HttpService {
     );
   }
 
-  private static objectToQueryString(obj: Params): string {
+  static objectToQueryString(obj: Params): string {
     return Object.keys(obj)
       .map(key => `${key}=${obj[key]}`)
       .join('&');
