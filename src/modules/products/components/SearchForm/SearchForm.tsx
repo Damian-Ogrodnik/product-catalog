@@ -11,7 +11,7 @@ interface SearchFormProps {
 }
 
 export const SearchForm: React.FC<SearchFormProps> = ({ searchDetails, changeSearchDetails }) => (
-  <S.SearchForm>
+  <S.SearchForm onSubmit={e => e.preventDefault()}>
     <S.SearchInput
       placeholder="Search"
       value={searchDetails.search}
