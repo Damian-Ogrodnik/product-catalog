@@ -16,7 +16,7 @@ export const EmptyInfoWrapper = styled.div`
 
   ${mediaQuery.medium} {
     width: 90%;
-    height: 30rem;
+    height: 20rem;
   }
 `;
 
