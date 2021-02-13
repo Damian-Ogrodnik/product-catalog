@@ -16,6 +16,10 @@ Tests:
 
 - `npm run test`
 
+Dev:
+
+- `npm run start`
+
 Build:
 
 - `npm run build`
