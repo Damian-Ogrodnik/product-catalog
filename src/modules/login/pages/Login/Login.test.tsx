@@ -1,14 +1,14 @@
-import { render } from "tests";
+import React from 'react';
 
-import { Login } from "./Login";
+import { render } from 'tests';
 
-describe("Login", () => {
-  test("Displays all information", async () => {
-    const { getByText, getByLabelText } = render(<Login />);
+import { Login } from './Login';
 
-    expect(getByText("Products page")).toBeInTheDocument();
-    expect(getByText("Products page")).toBeInTheDocument();
-    expect(getByLabelText("username:")).toBeInTheDocument();
-    expect(getByLabelText("password:")).toBeInTheDocument();
+describe('Login', () => {
+  test('Displays all information', async () => {
+    const { getByLabelText } = render(<Login />);
+
+    expect(getByLabelText('Username')).toBeInTheDocument();
+    expect(getByLabelText('Password')).toBeInTheDocument();
   });
 });

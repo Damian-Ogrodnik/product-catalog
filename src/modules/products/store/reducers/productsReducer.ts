@@ -13,7 +13,7 @@ export interface ProductsState {
   searchDetails: FetchProductsPayload;
 }
 
-export const defaultProductsState: ProductsState = {
+export const initialProductsState: ProductsState = {
   items: [],
   productsMeta: undefined,
   isFetchingProducts: false,
@@ -27,7 +27,7 @@ export const defaultProductsState: ProductsState = {
   },
 };
 
-export const productsReducer = createReducer<ProductsState, AppAction>(defaultProductsState)
+export const productsReducer = createReducer<ProductsState, AppAction>(initialProductsState)
   .handleAction(actions.fetchProductsAsync.request, state => ({
     ...state,
     isFetchingProducts: true,
