@@ -14,20 +14,20 @@ export const PaginationWrapper = styled.div`
 `;
 
 interface ButtonProps {
-  isDisabled: boolean;
+  disabled: boolean;
 }
 
 export const PaginationButton = styled.button<ButtonProps>`
-  cursor: ${({ isDisabled }) => (isDisabled ? 'not-allowed' : 'pointer')};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   border: none;
   background: transparent;
-  color: ${({ isDisabled }) => isDisabled && colors.darkGray};
+  color: ${({ disabled }) => disabled && colors.darkGray};
   font-size: ${fontSizes.normal};
   padding-bottom: 0.25rem;
   height: 100%;
 
   :hover {
-    color: ${({ isDisabled }) => !isDisabled && colors.primary};
+    color: ${({ disabled }) => !disabled && colors.primary};
   }
 `;
 

@@ -34,11 +34,11 @@ export const Product: React.FC<ProductListProps> = ({
             isFilled ? (
               <S.Star key={idx} src={FilledStar} alt="Filled star" />
             ) : (
-              <S.Star key={idx} src={EmptyStar} alt="Empty Star" />
+              <S.Star key={idx} src={EmptyStar} alt="Empty star" />
             ),
           )}
         </S.StarsWrapper>
-        <S.PrimaryButton onClick={() => active && toogleModal()} isDisabled={!active}>
+        <S.PrimaryButton onClick={() => active && toogleModal()} disabled={!active}>
           {active ? 'Show details' : 'Unavailable'}
         </S.PrimaryButton>
         <ProductModal product={product} toogleModal={toogleModal} isModalOpen={isModalOpen} />
