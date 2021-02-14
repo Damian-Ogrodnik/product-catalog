@@ -29,6 +29,6 @@ export const ProductsList: React.FC<ProductsListProps> = ({
       )}
     </S.ProductWrapper>
   ) : (
-    <EmptyInfo>empty</EmptyInfo>
+    <EmptyInfo />
   );
 };

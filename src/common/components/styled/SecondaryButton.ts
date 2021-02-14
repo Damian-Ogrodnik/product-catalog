@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { colors } from 'config/styles';
 
 interface PrimaryButtonProps {
-  isDisabled?: boolean;
+  disabled?: boolean;
 }
 
 export const SecondaryButton = styled.button<PrimaryButtonProps>`
-  cursor: ${({ isDisabled }) => (isDisabled ? 'not-allowed' : 'pointer')};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   height: 2.5rem;
-  color: ${({ isDisabled }) => (isDisabled ? colors.darkGray : colors.primaryLight)};
+  color: ${({ disabled }) => (disabled ? colors.darkGray : colors.primaryLight)};
   border-radius: 0.25rem;
   border: 1px solid ${colors.primaryLight};
   background-color: ${colors.white};
@@ -17,7 +17,7 @@ export const SecondaryButton = styled.button<PrimaryButtonProps>`
   margin: 0.5rem 0rem;
 
   :hover {
-    color: ${({ isDisabled }) => !isDisabled && colors.primary};
-    border-color: ${({ isDisabled }) => !isDisabled && colors.primary};
+    color: ${({ disabled }) => !disabled && colors.primary};
+    border-color: ${({ disabled }) => !disabled && colors.primary};
   }
 `;

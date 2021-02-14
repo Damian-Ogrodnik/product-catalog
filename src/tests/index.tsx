@@ -8,14 +8,34 @@ const Wrapper = ({ children }: { children?: ReactNode }) => {
   return <Router>{children}</Router>;
 };
 
-function customRender(ui: React.ReactElement, options?: Omit<RenderOptions, 'queries'>): RenderResult;
-function customRender<Q extends Queries>(ui: React.ReactElement, options: RenderOptions<Q>): RenderResult<Q>;
+function customRender(
+  ui: React.ReactElement,
+  options?: Omit<RenderOptions, 'queries'>,
+): RenderResult;
+function customRender<Q extends Queries>(
+  ui: React.ReactElement,
+  options: RenderOptions<Q>,
+): RenderResult<Q>;
 function customRender<Q extends Queries>(
   ui: React.ReactElement,
   options?: RenderOptions<Q> | Omit<RenderOptions, 'queries'>,
 ): RenderResult<Q> | RenderResult {
   return render<Q>(ui, { wrapper: options?.wrapper ?? Wrapper, ...options });
 }
+
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: jest.fn().mockImplementation(query => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(), // deprecated
+    removeListener: jest.fn(), // deprecated
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  })),
+});
 
 // re-export everything
 export * from '@testing-library/react';
