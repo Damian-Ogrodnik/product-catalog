@@ -10,9 +10,9 @@ export const ProductsLinks = t.type({
 export interface ProductsLinks extends t.TypeOf<typeof ProductsLinks> {}
 
 export const ProductsMeta = t.type({
-  currentPage: t.string,
+  currentPage: t.number,
   itemCount: t.number,
-  itemsPerPage: t.string,
+  itemsPerPage: t.number,
   totalItems: t.number,
   totalPages: t.number,
 });
