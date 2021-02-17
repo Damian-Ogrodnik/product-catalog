@@ -33,9 +33,9 @@ export const productsDataMock: ProductsData = {
   meta: {
     totalItems: 3,
     itemCount: 3,
-    itemsPerPage: '3',
+    itemsPerPage: 3,
     totalPages: 1,
-    currentPage: '1',
+    currentPage: 1,
   },
   links: {
     first: 'https://join-tsh-api-staging.herokuapp.com/product?limit=1',

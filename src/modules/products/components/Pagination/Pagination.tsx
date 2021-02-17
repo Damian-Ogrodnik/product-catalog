@@ -12,7 +12,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   fetchSpecificPage,
   productsMeta: { totalItems, currentPage, itemsPerPage, totalPages },
 }) => {
-  const currentPageNumber = parseInt(currentPage, 10);
+  const currentPageNumber = currentPage;
   const isFirstPage = currentPageNumber === 1;
   const isLastPage = currentPageNumber === totalPages;
 
@@ -29,7 +29,7 @@ export const Pagination: React.FC<PaginationProps> = ({
       <S.Pagination
         total={totalItems}
         onChange={fetchWithScroll}
-        pageSize={parseInt(itemsPerPage)}
+        pageSize={itemsPerPage}
         showSizeChanger={false}
         current={currentPageNumber}
       />
